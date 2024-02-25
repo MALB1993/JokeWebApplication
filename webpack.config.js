@@ -1,4 +1,7 @@
+//=================================================> define const path
 const path = require('path');
+//=================================================> define const html webpack plugin
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -8,7 +11,8 @@ module.exports = {
 
     output : {
         path: path.resolve(__dirname, 'dist'),
-        filename : '[name].js'
+        filename : '[name][contenthash].js',
+        clean : true
     },
     module : {
         rules: [
@@ -22,4 +26,11 @@ module.exports = {
             },
         ],
     },
+    plugins : [
+        new HtmlWebpackPlugin({
+            title : "Joke WebApplication",
+            filename : 'index.html',
+            template : 'src/template.html'
+        })
+    ]
 };
