@@ -15,17 +15,27 @@ module.exports = {
         clean : true
     },
     devtool : 'source-map',
-    module : {
+    module: {
         rules: [
             {
                 test: /\.scss$/,
-                use : [
+                use: [
                     'style-loader',
                     'css-loader',
                     'sass-loader'
                 ]
             },
-        ],
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ["@babel/preset-env"]
+                    }
+                }
+            }
+        ]
     },
     plugins : [
         new HtmlWebpackPlugin({
@@ -43,5 +53,5 @@ module.exports = {
         hot : true, 
         compress : true,
         historyApiFallback : true
-    }
+    },
 };
