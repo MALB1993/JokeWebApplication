@@ -1,0 +1,12 @@
+{
+  "name": "jokewebapplication",
+  "version": "1.0.0",
+  "description": "Creator of Mustafa Aladdin",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
