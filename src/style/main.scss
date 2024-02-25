@@ -1,0 +1,6 @@
+@import "./../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variabels/colors";
+
+body{
+    background-color : $background_primary_colors;
+}
